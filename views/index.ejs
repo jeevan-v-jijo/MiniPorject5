@@ -11,7 +11,7 @@
     <div class="box">
         <% for(var i=0;i< task.length; i++){ %>
             <div class ="item">
-                <input type="checkbox" name="checkbox" id = "check">
+                <input type="checkbox" name="checkbox" id = "check<%= i %>">
                 <p><%= task[i]%></p>
             </div>
         <% } %>
