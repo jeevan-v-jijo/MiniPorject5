@@ -1,9 +1,12 @@
 const express=require("express")
+const body=require("body-parser")
 const app=express()
 app.set('view engine','ejs');
-const https=require("https")
-const body=require("body-parser")
 app.use(body.urlencoded({extended:true}))
+app.use(express.static("public"))
+
+
+
 app.use(express.static("public"))
 
 var lists=[]
@@ -20,6 +23,6 @@ app.post("/",function(req,res){
     res.redirect("/")
 })
 
-app.listen(process.env.PORT||4000,function(){
+app.listen(process.env.PORT||5000,function(){
     console.log("server is running")
 })
