@@ -1,24 +1,25 @@
-const express = require("express")
-const app = express()
-const body = require("body-parser")
-app.use(body.urlencoded({extended: true}))
+const express=require("express")
+const app=express()
+app.set('view engine','ejs');
+const https=require("https")
+const body=require("body-parser")
+app.use(body.urlencoded({extended:true}))
 app.use(express.static("public"))
-app.set("view engine","ejs")
-// app.get("/",function(req, res){
-//     res.send("<h1>sooli ronsa</h1>")
-// })
-var list=[]
+
+var lists=[]
+
+
 app.get("/",function(req,res){
-    res.render("index",{task:list})
+    res.render("index",{tasks:lists})
 })
-app.post("/",function(req, res){
+
+app.post("/",function(req,res){
     var task=req.body.task
-    //res.send(task)
-     list.push(task)
-        res.redirect("/")
-    console.log(req.body)
-    // res.sendFile(__dirname+"/about.html")
+    // console.log(task)
+    lists.push(task)
+    res.redirect("/")
 })
-app.listen(process.env.PORT||5000,function(){
-    console.log("the server is up and running")
+
+app.listen( 3000,function(){
+    console.log("server is running")
 })
