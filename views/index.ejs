@@ -1,24 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>To-Do List</title>
 </head>
 <body>
-  
+    <h1>TO DO</h1>
     <div class="box">
-        <% for(var i=0;i< task.length; i++){ %>
-            <div class ="item">
-                <input type="checkbox" name="checkbox" id = "check">
-                <p><%= task[i]%></p>
+        <% for(var i=0; i < tasks.length; i++){ %>
+            <div class="item">
+                <input type="checkbox" name="checkbox" class="task-checkbox" id="check<%= i %>">
+                <p> <%= tasks[i] %></p>
             </div>
         <% } %>
-        <form action="/" method ="post" class="item"> 
-            <input type="text" name ="task">
-            <button type="submit">+</button>
-        </form>
+        <div class="box">
+            <form class="item" action="/" method="post">
+                <input type="text" name="task" placeholder="input your task">
+                <button type="submit">+</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
