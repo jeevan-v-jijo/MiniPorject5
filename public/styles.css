@@ -8,6 +8,7 @@ html {
 h1 {
   color: #fff;
   padding: 10px;
+  text-shadow: 3px 2px 3px #dd5ce6;
 }
 
 .box {
